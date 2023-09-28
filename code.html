@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Gallery</title>
+    <style>
+        /* Reset some default styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        ul, li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        /* Header styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+        nav li {
+            margin: 0 15px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ff5733;
+        }
+        /* Section styles */
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-size: 24px;
+            margin-top: 0;
+        }
+        /* Gallery styles */
+        .artwork {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .artwork .item {
+            flex: 1;
+            margin: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            text-align: center;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer; /* Add cursor pointer to indicate clickability */
+        }
+        .artwork .item img {
+            max-width: 100%;
+            height: auto;
+        }
+        .artwork .item h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        /* Artist and Exhibition styles (similar to Gallery) */
+        .artist, .exhibition {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .artist .item, .exhibition .item {
+            flex: 1;
+            margin: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            text-align: center;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+        /* About and Contact styles */
+        .about p, .contact p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        /* Footer styles */
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Art Gallery</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#artworks">Artworks</a></li>
+                <li><a href="#artists">Artists</a></li>
+                <li><a href="#exhibitions">Exhibitions</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Welcome to our Art Gallery</h2>
+        <p>Explore a world of creativity and imagination.</p>
+    </section>
+
+    <section id="artworks">
+        <h2>Artworks</h2>
+        <section id="search">
+            <h3>Search Artworks</h3>
+            <input type="text" id="searchInput" placeholder="Search artworks...">
+            <button onclick="performSearch()">Search</button>
+        </section>
+        <div class="artwork">
+            <!-- Artwork 1 -->
+            <div class="item" onclick="showArtwork('Starry Nights by Van Gogh', 'van_gogh.jpg')">
+                <img src="van_gogh.jpg" alt="Starry Nights by Van Gogh">
+                <h3>Artwork Title 1</h3>
+                <p>Artist: Artist Name 1</p>
+            </div>
+            <!-- Repeat the above div for each artwork (10 in total) -->
+            <!-- Artwork 2 -->
+            <div class="item" onclick="showArtwork('Mona Lisa', 'mona_lisa.jpg')">
+                <img src="mona_lisa.jpg" alt="Mona Lisa">
+                <h3>Artwork Title 2</h3>
+                <p>Artist: Artist Name 2</p>
+            </div>
+            <!-- ... Repeat for the other artworks ... -->
+        </div>
+    </section>
+
+    <section id="artists">
+        <h2>Artists</h2>
+        <div class="artist">
+            <!-- Artist 1 -->
+            <div class="item">
+                <img src="artist1.jpg" alt="Artist 1">
+                <h3>Artist Name 1</h3>
+                <p>Country: Country 1</p>
+            </div>
+            <!-- Repeat the above div for each artist (10 in total) -->
+            <!-- Artist 2 -->
+            <div class="item">
+                <img src="artist2.jpg" alt="Artist 2">
+                <h3>Artist Name 2</h3>
+                <p>Country: Country 2</p>
+            </div>
+            <!-- ... Repeat for the other artists ... -->
+        </div>
+    </section>
+
+    <section id="exhibitions">
+        <h2>Exhibitions</h2>
+        <div class="exhibition">
+            <div class="item">
+                <img src="exhibition1.jpg" alt="Exhibition 1">
+                <h3>Exhibition Title 1</h3>
+                <p>Date: Date 1</p>
+            </div>
+            <!-- Repeat the above div for each exhibition -->
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Your gallery's mission and history go here.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@artgallery.com</p>
+        <p>Phone: +1 (123) 456-7890</p>
+    </section>
+
+    <section class="artwork-details" id="artwork-details">
+        <!-- Display detailed information about the artwork here -->
+        <h2 id="artwork-title"></h2>
+        <img src="" alt="" id="artwork-image">
+        <p>Artist: <span id="artist-name"></span></p>
+        <p>Description: <span id="artwork-description"></span></p>
+        <p>Year: <span id="artwork-year"></span></p>
+        <button onclick="addToFavorites()">Add to Favorites</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Art Gallery</p>
+    </footer>
+
+    <script>
+        // JavaScript code for search
+        function performSearch() {
+            const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+            const artworks = document.querySelectorAll(".artwork .item");
+
+            artworks.forEach(artwork => {
+                const title = artwork.querySelector("h3").textContent.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    artwork.style.display = "block";
+                } else {
+                    artwork.style.display = "none";
+                }
+            });
+        }
+
+        // JavaScript code for adding to favorites
+        function addToFavorites() {
+            // Implement your logic for adding to favorites here
+            alert("Added to Favorites!");
+        }
+
+        // JavaScript code for showing artwork details
+        function showArtwork(title, imageSrc) {
+            document.getElementById("artwork-title").textContent = title;
+            document.getElementById("artwork-image").src = imageSrc;
+            document.getElementById("artist-name").textContent = "Artist Name"; // Replace with actual artist name
+            document.getElementById("artwork-description").textContent = "Description of the artwork goes here."; // Replace with actual description
+            document.getElementById("artwork-year").textContent = "Year"; // Replace with actual year
+            document.getElementById("artwork-details").style.display = "block";
+        }
+    </script>
+</body>
+</html>
