@@ -24,6 +24,9 @@
             color: #fff;
             padding: 20px 0;
             text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         h1 {
             font-size: 36px;
@@ -49,6 +52,18 @@
         nav a:hover {
             color: #ff5733;
         }
+        /* User Profile styles */
+        #user-profile {
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+        #user-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
         /* Section styles */
         section {
             margin: 20px;
@@ -73,7 +88,7 @@
             background-color: #f9f9f9;
             text-align: center;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-            cursor: pointer; /* Add cursor pointer to indicate clickability */
+            cursor: pointer;
         }
         .artwork .item img {
             max-width: 100%;
@@ -123,8 +138,13 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <!-- User Profile Section -->
+        <div id="user-profile">
+            <img src="Arjun_profile.JPG" alt="Arjun">
+            <p>Welcome <span id="Arjun">Arjun,</span></p>
+            <p>Email: <span id="user-email">arjun@art.com</span></p>
+        </div>
     </header>
-
     <section id="home">
         <h2>Welcome to our Art Gallery</h2>
         <p>Explore a world of creativity and imagination.</p>
@@ -141,14 +161,59 @@
             <!-- Artwork 1 -->
             <div class="item" onclick="showArtwork('Starry Nights by Van Gogh', 'van_gogh.jpg')">
                 <img src="van_gogh.jpg" alt="Starry Nights by Van Gogh">
-                <h3>Artwork Title 1</h3>
-                <p>Artist: Artist Name 1</p>
+                <h3>Starry Nights</h3>
+                <p>Artist: Vincent Van Gogh</p>
             </div>
             <!-- Repeat the above div for each artwork (10 in total) -->
             <!-- Artwork 2 -->
             <div class="item" onclick="showArtwork('Mona Lisa', 'mona_lisa.jpg')">
                 <img src="mona_lisa.jpg" alt="Mona Lisa">
-                <h3>Artwork Title 2</h3>
+                <h3>Mona Lisa</h3>
+                <p>Artist: Da Vinci</p>
+            </div>
+            <div class="item" onclick="showArtwork('Girl with a pearl earring', 'Girl with a pearl earring.jpg')">
+                <img src="Girl with a pearl earring.jpg" alt="Girl with a pearl earring">
+                <h3>Girl with a pearl earring</h3>
+                <p>Artist: Artist Name 2</p>
+            </div>
+            <div class="item" onclick="showArtwork('The kiss', 'The_kiss.jpg')">
+                <img src="The_kiss.jpg" alt="The_kiss">
+                <h3>The kiss</h3>
+                <p>Artist: Artist Name 2</p>
+            </div>
+            <div class="item" onclick="showArtwork('Whistler', 'Whistler.jpg')">
+                <img src="Whistler.jpg" alt="Whistler">
+                <h3>Whistler</h3>
+                <p>Artist: Artist Name 2</p>
+            </div>
+            <div class="item" onclick="showArtwork('Arnolfini', 'Arnolfini.jpg')">
+                <img src="Arnolfini.jpg" alt="Arnolfini">
+                <h3>Arnolfini</h3>
+                <p>Artist: Artist Name 2</p>
+            </div>
+            <div class="item" onclick="showArtwork('Sunday Afternoon', 'sunday afternoon.jpg')">
+                <img src="sunday afternoon.jpg" alt="Sunday Afternoon">
+                <h3>Sunday Afternoon</h3>
+                <p>Artist: Artist Name 2</p>
+            </div>
+            <div class="item" onclick="showArtwork('the Harvesters', 'the harvesters.jpg')">
+                <img src="the harvesters.jpg" alt="The Harvesters">
+                <h3>The Harvesters</h3>
+                <p>Artist: Artist Name 2</p>
+            </div>
+            <div class="item" onclick="showArtwork('Piet Mondrain', 'piet mondrain.jpg')">
+                <img src="piet mondrain.jpg" alt="Piet Mondrain">
+                <h3>Piet Mondrain</h3>
+                <p>Artist: Artist Name 2</p>
+            </div>
+            <div class="item" onclick="showArtwork('Guernica', 'guernica.jpeg')">
+                <img src="guernica.jpeg" alt="Guernica">
+                <h3>Guernica</h3>
+                <p>Artist: Artist Name 2</p>
+            </div>
+            <div class="item" onclick="showArtwork('Sunrise', 'sunrise.jpg')">
+                <img src="sunrise.jpg" alt="Sunrise">
+                <h3>Sunrise</h3>
                 <p>Artist: Artist Name 2</p>
             </div>
             <!-- ... Repeat for the other artworks ... -->
@@ -163,6 +228,7 @@
                 <img src="artist1.jpg" alt="Artist 1">
                 <h3>Artist Name 1</h3>
                 <p>Country: Country 1</p>
+                <p>Biography: A brief biography of Artist 1 goes here.</p>
             </div>
             <!-- Repeat the above div for each artist (10 in total) -->
             <!-- Artist 2 -->
@@ -170,6 +236,7 @@
                 <img src="artist2.jpg" alt="Artist 2">
                 <h3>Artist Name 2</h3>
                 <p>Country: Country 2</p>
+                <p>Biography: A brief biography of Artist 2 goes here.</p>
             </div>
             <!-- ... Repeat for the other artists ... -->
         </div>
